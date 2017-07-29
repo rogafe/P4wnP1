@@ -1,5 +1,9 @@
 #!/bin/bash
 #
+#  Modded version by Rogafe -- For the CHIP 
+#
+#
+#
 # P4wnP1 (PiZero IPv4 traffic interceptor and USB hash stealer)
 # stetup script
 #       Author: Marcus Mengs (MaMe82)
@@ -28,6 +32,16 @@
 # - download and extract of JtR jumbo has to be added (https://github.com/mame82/john-1-8-0-jumbo_raspbian_jessie_precompiled)
 #	--> used by get_and_crack_last.sh
 
+echo " Not Working now  "
+echo " This script is for the chip "
+echo "the script will pause 5 sec for u to quit"
+sleep 5
+
+echo "install chip needed packages"
+sudo apt-get update
+sudo apt install -y wireless-tools
+echo "proced to the P4wnP1 install "
+
 
 # get DIR the script is running from (by CD'ing in and running pwd
 wdir=$( cd $(dirname $BASH_SOURCE[0]) && pwd)
@@ -44,12 +58,12 @@ fi
 echo "...[pass] Internet connection works"
 
 # check for Raspbian Jessie
-echo "Testing if the system runs Raspbian Jessie..."
-if ! grep -q -E "Raspbian.*jessie" /etc/os-release ; then 
-        echo "...[Error] Pi is not running Raspbian Jessie! Exiting ..."
-        exit
-fi
-echo "...[pass] Pi seems to be running Raspbian Jessie"
+#echo "Testing if the system runs Raspbian Jessie..."
+#if ! grep -q -E "Raspbian.*jessie" /etc/os-release ; then 
+#        echo "...[Error] Pi is not running Raspbian Jessie! Exiting ..."
+#        exit
+#fi
+#echo "...[pass] Pi seems to be running Raspbian Jessie"
 
 echo "Backing up resolv.conf"
 sudo cp /etc/resolv.conf /tmp/resolv.conf
@@ -215,4 +229,3 @@ echo "If you're using a Pi Zero W, give the HID backdoor a try ;-)"
 echo
 echo "You need to reboot the Pi now!"
 echo "===================================================================================="
-
