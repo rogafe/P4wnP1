@@ -38,7 +38,7 @@ echo "the script will pause 5 sec for u to quit"
 sleep 5
 
 echo "install chip needed packages"
-sudo apt-get update
+#sudo apt-get update
 sudo apt install -y wireless-tools
 echo "proced to the P4wnP1 install "
 
@@ -69,7 +69,7 @@ echo "Backing up resolv.conf"
 sudo cp /etc/resolv.conf /tmp/resolv.conf
 
 echo "Installing needed packages..."
-sudo apt-get update
+#sudo apt-get update
 if $WIFI; then
 # install dhcpd, git, screen, pip
 	sudo apt-get install -y dnsmasq git python-pip python-dev screen sqlite3 inotify-tools hostapd
