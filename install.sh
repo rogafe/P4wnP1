@@ -39,7 +39,7 @@ sleep 5
 
 echo "install chip needed packages"
 #sudo apt-get update
-sudo apt install -y wireless-tools
+sudo apt install -y wireless-tools curl 
 echo "proced to the P4wnP1 install "
 
 
