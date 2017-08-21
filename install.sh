@@ -38,8 +38,12 @@ echo "the script will pause 5 sec for u to quit"
 sleep 5
 
 echo "install chip needed packages"
-#sudo apt-get update
+sudo apt-get update
 sudo apt install -y wireless-tools curl 
+echo "add pi user"
+adduser --quiet --disabled-password --shell /bin/bash --home /home/newuser --gecos "User" pi
+echo "pi:raspberry" | chpasswd
+
 echo "proced to the P4wnP1 install "
 
 
