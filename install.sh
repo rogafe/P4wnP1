@@ -34,8 +34,9 @@
 
 echo " Not Working now  "
 echo " This script is for the chip "
-echo "the script will pause 5 sec for u to quit"
-sleep 5
+echo "the script will pause 1 sec for u to quit"
+echo ""
+sleep 1
 
 echo "install chip needed packages"
 sudo apt-get update
