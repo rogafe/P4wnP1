@@ -5,9 +5,9 @@ cd g1
 echo "0x1d6b" > idVendor
 echo "0x0104" > idProduct
 mkdir strings/0x409
-echo "My␣serial" > strings/0x409/serialnumber
-echo "My␣Vendor" > strings/0x409/manufacturer
-echo "My␣Product" > strings/0x409/product
+echo "x101x" > strings/0x409/serialnumber
+echo "Skynet" > strings/0x409/manufacturer
+echo "LOL_Human" > strings/0x409/product
 mkdir functions/hid.usb0
 echo 1 > functions/hid.usb0/protocol
 echo 1 > functions/hid.usb0/subclass
