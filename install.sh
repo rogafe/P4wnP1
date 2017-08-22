@@ -40,7 +40,8 @@ sleep 1
 
 echo "install chip needed packages"
 sudo apt-get update
-sudo apt install -y wireless-tools curl 
+echo "wireless-tools curl dosfstools"
+sudo apt install -y wireless-tools curl dosfstools 
 echo "add pi user"
 adduser --quiet --disabled-password --shell /bin/bash --home /home/newuser --gecos "User" pi
 echo "pi:raspberry" | chpasswd
@@ -216,7 +217,7 @@ echo "Removing all former modules enabled in /boot/cmdline.txt..."
 sudo sed -i -e 's/modules-load=.*dwc2[',''_'a-zA-Z]*//' /boot/cmdline.txt
 
 echo "Installing kernel update, which hopefully makes USB gadgets work again"
-sudo rpi-update
+#sudo rpi-update
 
 echo "===================================================================================="
 echo "If you came till here without errors, you shoud be good to go with your P4wnP1..."
