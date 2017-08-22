@@ -50,6 +50,8 @@ echo "proced to the P4wnP1 install "
 # get DIR the script is running from (by CD'ing in and running pwd
 wdir=$( cd $(dirname $BASH_SOURCE[0]) && pwd)
 
+echo $wdir
+
 # check for wifi capability
 if $wdir/wifi/check_wifi.sh; then WIFI=true; else WIFI=false; fi
 
