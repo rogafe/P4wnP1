@@ -13,7 +13,7 @@ function generate_dnsmasq_wifi_conf()
 	cat <<- EOF > /tmp/dnsmasq_wifi.conf
 		bind-interfaces
 		port=0
-		interface=wlan0
+		interface=wlan1
 		listen-address=$WIFI_ACCESSPOINT_IP
 		dhcp-range=$WIFI_ACCESSPOINT_DHCP_RANGE,$WIFI_ACCESSPOINT_NETMASK,5m
 
@@ -38,7 +38,7 @@ function generate_hostapd_conf()
 {
 	cat <<- EOF > /tmp/hostapd.conf
 		# This is the name of the WiFi interface we configured above
-		interface=wlan0
+		interface=wlan1
 
 		# Use the nl80211 driver with the brcmfmac driver
 		driver=nl80211
@@ -92,7 +92,7 @@ function start_wifi_accesspoint()
 #	hostapd /tmp/hostapd.conf
 
 	# configure interface
-	ifconfig wlan0 $WIFI_ACCESSPOINT_IP netmask $WIFI_ACCESSPOINT_NETMASK
+	ifconfig wlan1 $WIFI_ACCESSPOINT_IP netmask $WIFI_ACCESSPOINT_NETMASK
 
 	# start DHCP server (second instance if USB over Etherne is in use)
 	generate_dnsmasq_wifi_conf
