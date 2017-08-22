@@ -200,8 +200,8 @@ fi
 
 
 # enable autologin for user pi (requires RASPBIAN JESSIE LITE, should be checked)
-echo "Enable autologin for user pi..."
-sudo ln -fs /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+#echo "Enable autologin for user pi..."
+#sudo ln -fs /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 # setup USB gadget capable overlay FS (needs Pi Zero, but shouldn't be checked - setup must 
 # be possible from other Pi to ease up Internet connection)
